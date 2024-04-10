@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendário</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0d131d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .wrapper {
+      max-width: 760px;
+      margin: 10px auto;
+      background-color: #b4ebe2;
+      padding: 20px;
+      display: flex;
+      border-radius: 10px;
+      flex-wrap: wrap;
+    }
+
+    .days-week {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      padding: 10px 0px;
+      border-bottom: 1px solid #FF7A48;
+    }
+
+    .number-days {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .days-week span {
+      color: #E3371E;
+      font-weight: bold;
+      display: inline-block;
+      width: 14.2%;
+    }
+
+    .number-days span {
+      display: inline-block;
+      width: 14.2%;
+      margin: 8px 0px;
+      color: #0d131d;
+    }
+
+    .mes-anterior {
+      opacity: 0.5;
+    }
+
+    /* .day-selected {
+      text-decoration: underline;
+    } */
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="days-week">
+      <span>Segunda</span>
+      <span>Terça</span>
+      <span>Quarta</span>
+      <span>Quinta</span>
+      <span>Sexta</span>
+      <span>Sábado</span>
+      <span>Domingo</span>
+    </div>
+
+    <div class="number-days">
+        <span class="mes-anterior">30</span>
+        <span class="mes-anterior">31</span>
+    </div>
+      <script>
+        let el = document.querySelector('.number-days');
+        for(let i = 1; i <= 31; i++) {
+          if (i == 10) {
+            el.innerHTML += '<span class="day-selected">'+i+'</span>'
+          } else {
+            el.innerHTML += '<span>'+i+'</span>'
+          }
+        }
+      </script>
+  </div>
+</body>
+</html>
